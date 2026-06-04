@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>FitCheck AI - Register</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(-45deg,#0f172a,#1e3a8a,#0891b2,#10b981);
+    background-size:400% 400%;
+    animation:gradientBG 12s ease infinite;
+    overflow:hidden;
+}
+
+@keyframes gradientBG{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+.circle{
+    position:absolute;
+    border-radius:50%;
+    filter:blur(80px);
+}
+
+.circle1{
+    width:300px;
+    height:300px;
+    background:#00ff88;
+    top:-60px;
+    left:-60px;
+    opacity:.25;
+}
+
+.circle2{
+    width:350px;
+    height:350px;
+    background:#00d4ff;
+    bottom:-80px;
+    right:-80px;
+    opacity:.25;
+}
+
+.register-box{
+    width:450px;
+    padding:40px;
+    border-radius:25px;
+    background:rgba(255,255,255,0.12);
+    backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,0.2);
+    box-shadow:0 15px 35px rgba(0,0,0,0.3);
+    text-align:center;
+    color:white;
+    animation:fadeIn 1s ease;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.logo{
+    font-size:60px;
+    margin-bottom:10px;
+}
+
+h1{
+    margin-bottom:8px;
+}
+
+.subtitle{
+    color:#dbeafe;
+    font-size:14px;
+    margin-bottom:25px;
+}
+
+.input-group{
+    margin-bottom:18px;
+    text-align:left;
+}
+
+.input-group label{
+    display:block;
+    margin-bottom:8px;
+    font-size:14px;
+}
+
+.input-group input{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:12px;
+    background:rgba(255,255,255,0.15);
+    color:white;
+    outline:none;
+    font-size:15px;
+}
+
+.input-group input::placeholder{
+    color:#cbd5e1;
+}
+
+.input-group input:focus{
+    border:1px solid #00ff88;
+    box-shadow:0 0 10px rgba(0,255,136,0.5);
+}
+
+.register-btn{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:12px;
+    background:linear-gradient(90deg,#00ff88,#00d4ff);
+    color:#0f172a;
+    font-size:16px;
+    font-weight:700;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.register-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 20px rgba(0,255,136,.4);
+}
+
+.login-link{
+    margin-top:20px;
+    font-size:14px;
+}
+
+.login-link a{
+    color:#00ff88;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.login-link a:hover{
+    text-decoration:underline;
+}
+
+.footer{
+    margin-top:20px;
+    font-size:12px;
+    color:#cbd5e1;
+}
+
+@media(max-width:500px){
+
+.register-box{
+    width:90%;
+    padding:30px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="circle circle1"></div>
+<div class="circle circle2"></div>
+
+<div class="register-box">
+
+```
+<div class="logo">🏋️</div>
+
+<h1>Create Account</h1>
+
+<p class="subtitle">
+    Join FitCheck AI and start tracking your fitness journey.
+</p>
+
+<form method="POST">
+
+    <div class="input-group">
+        <label>Username</label>
+        <input
+            type="text"
+            name="username"
+            placeholder="Enter Username"
+            required>
+    </div>
+
+    <div class="input-group">
+        <label>Email</label>
+        <input
+            type="email"
+            name="email"
+            placeholder="Enter Email"
+            required>
+    </div>
+
+    <div class="input-group">
+        <label>Password</label>
+        <input
+            type="password"
+            name="password"
+            placeholder="Create Password"
+            required>
+    </div>
+
+    <button type="submit" class="register-btn">
+        Create Account
+    </button>
+
+</form>
+
+<div class="login-link">
+    Already have an account?
+    <a href="/login">Login Here</a>
+</div>
+
+<div class="footer">
+    © 2026 FitCheck AI
+</div>
+```
+
+</div>
+
+</body>
+</html>

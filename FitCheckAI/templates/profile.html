@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container mt-4 text-center">
+
+    <h2>👤 User Profile</h2>
+
+    <div class="card p-4 mt-3 shadow">
+
+        <h4>Username: {{ current_user.username }}</h4>
+        <p>Email: {{ current_user.email }}</p>
+
+        <hr>
+
+        <h5>📊 Statistics</h5>
+
+        <p>Total Predictions: <b>{{ total }}</b></p>
+
+        <p>Last BMI: 
+            <b>
+                {% if last_record %}
+                    {{ last_record.bmi }}
+                {% else %}
+                    N/A
+                {% endif %}
+            </b>
+        </p>
+
+        <p>Last Category: 
+            <b>
+                {% if last_record %}
+                    {{ last_record.category }}
+                {% else %}
+                    N/A
+                {% endif %}
+            </b>
+        </p>
+
+    </div>
+
+</div>
+
+{% endblock %}

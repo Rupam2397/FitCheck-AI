@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Fitness Predictor Login</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(-45deg,#0f172a,#1e3a8a,#0891b2,#10b981);
+    background-size:400% 400%;
+    animation:gradientBG 12s ease infinite;
+    overflow:hidden;
+}
+
+@keyframes gradientBG{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+.circle{
+    position:absolute;
+    border-radius:50%;
+    filter:blur(70px);
+}
+
+.circle1{
+    width:300px;
+    height:300px;
+    background:#00ff88;
+    top:-50px;
+    left:-50px;
+    opacity:.25;
+}
+
+.circle2{
+    width:350px;
+    height:350px;
+    background:#00d4ff;
+    bottom:-80px;
+    right:-80px;
+    opacity:.25;
+}
+
+.login-box{
+    width:420px;
+    padding:40px;
+    border-radius:25px;
+    background:rgba(255,255,255,0.12);
+    backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,0.2);
+    box-shadow:0 15px 35px rgba(0,0,0,0.3);
+    color:white;
+    text-align:center;
+    animation:fadeIn 1s ease;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.logo{
+    font-size:65px;
+    margin-bottom:10px;
+}
+
+h1{
+    font-size:30px;
+    margin-bottom:8px;
+}
+
+.subtitle{
+    color:#dbeafe;
+    margin-bottom:30px;
+    font-size:14px;
+}
+
+.input-group{
+    margin-bottom:20px;
+    text-align:left;
+}
+
+.input-group label{
+    display:block;
+    margin-bottom:8px;
+    font-size:14px;
+    color:#e2e8f0;
+}
+
+.input-group input{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:12px;
+    background:rgba(255,255,255,0.15);
+    color:white;
+    outline:none;
+    font-size:15px;
+}
+
+.input-group input::placeholder{
+    color:#cbd5e1;
+}
+
+.input-group input:focus{
+    border:1px solid #00ff88;
+    box-shadow:0 0 10px rgba(0,255,136,0.5);
+}
+
+.password-wrapper{
+    position:relative;
+}
+
+.toggle-password{
+    position:absolute;
+    right:15px;
+    top:50%;
+    transform:translateY(-50%);
+    cursor:pointer;
+    color:white;
+    font-size:14px;
+}
+
+.login-btn{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:12px;
+    background:linear-gradient(90deg,#00ff88,#00d4ff);
+    color:#0f172a;
+    font-size:16px;
+    font-weight:700;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.login-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 20px rgba(0,255,136,.4);
+}
+
+.extra-links{
+    margin-top:18px;
+    display:flex;
+    justify-content:space-between;
+    font-size:13px;
+}
+
+.extra-links a{
+    color:#ffffff;
+    text-decoration:none;
+}
+
+.extra-links a:hover{
+    color:#00ff88;
+}
+
+.register{
+    margin-top:25px;
+    font-size:14px;
+}
+
+.register a{
+    color:#00ff88;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.register a:hover{
+    text-decoration:underline;
+}
+
+.footer{
+    margin-top:20px;
+    font-size:12px;
+    color:#cbd5e1;
+}
+
+@media(max-width:500px){
+
+.login-box{
+    width:90%;
+    padding:30px;
+}
+
+h1{
+    font-size:24px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="circle circle1"></div>
+<div class="circle circle2"></div>
+
+<div class="login-box">
+
+```
+<div class="logo">🏋️</div>
+
+<h1>Fitness Predictor</h1>
+
+<p class="subtitle">
+    Smart Health & Fitness Recommendation System
+</p>
+
+<form method="POST">
+
+    <div class="input-group">
+        <label>Email Address</label>
+        <input
+            type="email"
+            name="email"
+            placeholder="Enter your email"
+            required>
+    </div>
+
+    <div class="input-group">
+        <label>Password</label>
+
+        <div class="password-wrapper">
+            <input
+                type="password"
+                name="password"
+                id="password"
+                placeholder="Enter your password"
+                required>
+
+            <span
+                class="toggle-password"
+                onclick="togglePassword()">
+                Show
+            </span>
+        </div>
+
+    </div>
+
+    <button type="submit" class="login-btn">
+        Login
+    </button>
+
+</form>
+
+<div class="extra-links">
+    <a href="#">Forgot Password?</a>
+    <a href="/">Home</a>
+</div>
+
+<div class="register">
+    Don't have an account?
+    <a href="/register">Register Now</a>
+</div>
+
+<div class="footer">
+    © 2026 Fitness Predictor
+</div>
+```
+
+</div>
+
+<script>
+
+function togglePassword(){
+
+    const password =
+        document.getElementById("password");
+
+    const toggle =
+        document.querySelector(".toggle-password");
+
+    if(password.type === "password"){
+        password.type = "text";
+        toggle.innerHTML = "Hide";
+    }else{
+        password.type = "password";
+        toggle.innerHTML = "Show";
+    }
+}
+
+</script>
+
+</body>
+</html>

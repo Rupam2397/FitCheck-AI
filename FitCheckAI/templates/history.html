@@ -1,0 +1,148 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<style>
+body {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    min-height: 100vh;
+    padding: 30px;
+}
+
+/* Page Title */
+.top-bar {
+    text-align: center;
+    color: white;
+    margin-bottom: 25px;
+}
+
+.top-bar h2 {
+    font-weight: bold;
+}
+
+/* Card Styling */
+.card {
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* Table */
+.table thead {
+    background: #343a40;
+    color: white;
+}
+
+.table tbody tr:hover {
+    background: #f1f1f1;
+    transition: 0.3s;
+}
+
+/* Delete Button */
+.btn-delete {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-delete:hover {
+    background: #c82333;
+}
+
+/* Badge Styles */
+.badge-custom {
+    padding: 6px 10px;
+    border-radius: 10px;
+    font-size: 12px;
+}
+
+.normal { background: #28a745; color: white; }
+.under { background: #17a2b8; color: white; }
+.over { background: #ffc107; color: black; }
+.obese { background: #dc3545; color: white; }
+
+</style>
+
+<div class="container">
+
+    <!-- Header -->
+    <div class="top-bar">
+        <h2>📊 Fitness History Dashboard</h2>
+        <p>Track all BMI analysis records</p>
+    </div>
+
+    <!-- Table Card -->
+    <div class="card p-4">
+
+        <div class="table-responsive">
+            <table class="table table-striped table-hover text-center">
+
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Height</th>
+                        <th>Weight</th>
+                        <th>Age</th>
+                        <th>BMI</th>
+                        <th>Status</th>
+                        <th>Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    {% if records %}
+
+                        {% for r in records %}
+                        <tr>
+                            <td>{{ r.id }}</td>
+                            <td>{{ r.height }}</td>
+                            <td>{{ r.weight }}</td>
+                            <td>{{ r.age }}</td>
+                            <td><b>{{ r.bmi }}</b></td>
+
+                            <td>
+                                {% if r.category == "Normal" %}
+                                    <span class="badge-custom normal">Normal</span>
+                                {% elif r.category == "Underweight" %}
+                                    <span class="badge-custom under">Underweight</span>
+                                {% elif r.category == "Overweight" %}
+                                    <span class="badge-custom over">Overweight</span>
+                                {% else %}
+                                    <span class="badge-custom obese">Obese</span>
+                                {% endif %}
+                            </td>
+
+                            <td>{{ r.date }}</td>
+
+                            <td>
+                                <a href="/delete/{{ r.id }}" class="btn-delete">
+                                    Delete
+                                </a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+
+                    {% else %}
+
+                        <tr>
+                            <td colspan="8" class="text-muted">
+                                No records found
+                            </td>
+                        </tr>
+
+                    {% endif %}
+
+                </tbody>
+
+            </table>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

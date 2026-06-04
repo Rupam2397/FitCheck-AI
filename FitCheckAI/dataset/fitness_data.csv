@@ -1,0 +1,14 @@
+height,weight,age,label
+1.50,45,18,Underweight
+1.55,50,19,Underweight
+1.60,55,20,Normal
+1.65,60,21,Normal
+1.70,65,22,Normal
+1.75,70,23,Normal
+1.80,75,24,Normal
+1.70,80,25,Overweight
+1.75,85,26,Overweight
+1.80,90,27,Overweight
+1.85,100,28,Obese
+1.60,90,30,Obese
+1.65,95,32,Obese

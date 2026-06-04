@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+    <h2 class="text-center">📊 BMI Analytics</h2>
+
+    <div class="card p-4 mt-3">
+        <canvas id="bmiChart"></canvas>
+    </div>
+
+</div>
+
+<!-- Load Chart.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const labels = JSON.parse('{{ dates | tojson | safe }}');
+    const data = JSON.parse('{{ bmi_values | tojson | safe }}');
+
+    if (!labels.length || !data.length) {
+        document.querySelector(".card").innerHTML =
+            "<h5>No data available. Please add predictions first.</h5>";
+        return;
+    }
+
+    const ctx = document.getElementById('bmiChart').getContext('2d');
+
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'BMI Trend',
+                data: data,
+                borderColor: 'blue',
+                backgroundColor: 'rgba(0,0,255,0.1)',
+                fill: true,
+                tension: 0.3
+            }]
+        }
+    });
+
+});
+</script>
+
+{% endblock %}
