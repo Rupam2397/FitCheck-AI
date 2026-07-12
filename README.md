@@ -1,48 +1,22 @@
-# FitCheck AI 🏋️‍♂️🤖
+## 📸 Screenshots
 
-A Machine Learning-powered Fitness Recommendation System built using Flask.
+### Login Page
+![Login Page](FitCheckAI/screenshots/login.png)
 
-FitCheck AI analyzes user health parameters and provides personalized fitness recommendations including BMI analysis, diet suggestions, workout recommendations, and fitness tracking.
+### Registration Page
+![Register Page](FitCheckAI/screenshots/register.png)
 
----
+### Dashboard
+![Dashboard](FitCheckAI/screenshots/dashboard.png)
 
-## 🚀 Features
+### Fitness Prediction Result
+![Prediction Result](FitCheckAI/screenshots/prediction-result.png)
 
-✅ User Registration and Login System  
-✅ Secure Authentication  
-✅ BMI Calculation  
-✅ Machine Learning-based Fitness Classification  
-✅ Personalized Diet Recommendations  
-✅ Exercise Suggestions  
-✅ User History Tracking  
-✅ BMI Analytics Dashboard  
-✅ User Profile Management  
+### Analytics Dashboard
+![Analytics](FitCheckAI/screenshots/analytics.png)
 
----
+### History Tracking
+![History](FitCheckAI/screenshots/history.png)
 
-## 🛠️ Tech Stack
-
-### Backend
-- Python
-- Flask
-- Flask-SQLAlchemy
-- Flask-Login
-
-### Machine Learning
-- Scikit-learn
-- Joblib
-- Pandas
-- NumPy
-
-### Database
-- SQLite
-
-### Frontend
-- HTML
-- CSS
-- JavaScript
-- Bootstrap
-
----
-
-## 📂 Project Structure
+### User Profile
+![Profile](FitCheckAI/screenshots/profile.png)
